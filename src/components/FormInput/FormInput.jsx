@@ -1,6 +1,14 @@
 import React from "react";
 
-const FormInput =  ({ htmlForId, label, type, value, onChange, errors }) => {
+const FormInput = ({
+  htmlForId,
+  label,
+  type,
+  value,
+  onChange,
+  errors,
+  errorText,
+}) => {
   return (
     <div className="form-group">
       <label htmlFor={htmlForId}>{label}</label>
@@ -12,11 +20,11 @@ const FormInput =  ({ htmlForId, label, type, value, onChange, errors }) => {
         id={htmlForId}
         name={htmlForId}
       />
-      {/* {errors[htmlForId] !== undefined ? (
+      {errors ? (
         <div className="alert alert-danger" role="alert">
-          {errors[htmlForId]}
+          {errors[htmlForId]} {errorText}
         </div>
-      ) : null} */}
+      ) : null}
     </div>
   );
 };

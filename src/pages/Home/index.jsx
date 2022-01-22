@@ -10,6 +10,7 @@ const Home = () => {
 
   const allowModal = (e) => {
     setOpen(!open);
+    getFilesList();
   };
 
   const handleModal = (e) => {
